@@ -1,17 +1,21 @@
 import React from 'react';
+import TodoForm from '../src/components/TodoComponents/TodoForm';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
   constructor(){
     super();
     this.state = {
-    data: [{
-      task:'', 
-      id:'', 
-      completed:"",
-      }]
+      // data state
+    todoData: [{
+      task:'Cook ', 
+      id: Date.now(), 
+      completed:"true"
+      }],
+      // completed state
+      todoCompleted:'',
     }
-      console.log(this.state.data)
+      console.log(this.state.todoData)
 
   }
   // design `App` to be the parent component of your application.
@@ -20,6 +24,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm todoData={this.state.todoData}/>
+
       </div>
     );
   }
