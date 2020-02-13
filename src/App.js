@@ -1,5 +1,5 @@
 import React from 'react';
-import data from '../src/components/TodoComponents/Todo';
+
 import TodoList from '../src/components/TodoComponents/TodoList.js';
 import TodoForm from '../src/components/TodoComponents/TodoForm';
 

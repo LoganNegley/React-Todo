@@ -2,6 +2,7 @@
 // feel free to change this component.js into TodoList.js
 import React from 'react';
 import TodoForm from '../TodoComponents/TodoForm';
+import Todo from '../TodoComponents/Todo';
 
 
 class TodoList extends React.Component {
@@ -10,7 +11,7 @@ class TodoList extends React.Component {
     return (
       <div>
         {this.props.todoData.map( (item) =>
-            <p>{item.task}</p>
+        <Todo item= {item}/>
         )}
       </div>
     );
