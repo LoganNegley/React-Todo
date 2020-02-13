@@ -1,24 +1,9 @@
 import React from 'react';
+import data from '../src/components/TodoComponents/Todo';
 import TodoList from '../src/components/TodoComponents/TodoList.js';
 import TodoForm from '../src/components/TodoComponents/TodoForm';
 
-const data = [
-    {
-      task:'Cook', 
-      id: 1, 
-      completed:false
-      },
-      {
-        task:'Shop',
-        id: 2,
-        completed:false
-      },
-      {
-        task:'Homework',
-        id: 3,
-        completed:false
-      }
-      ];
+
 
 class App extends React.Component {
 
