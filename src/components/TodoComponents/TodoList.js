@@ -6,10 +6,12 @@ import TodoForm from '../TodoComponents/TodoForm';
 
 class TodoList extends React.Component {
 
-  render() {
+  render(props) {
     return (
       <div>
-        <p>Todo List.....</p>
+        {props.todoData.map((item)=>{
+            <p>{item.task}</p>
+        })}
       </div>
     );
   }
