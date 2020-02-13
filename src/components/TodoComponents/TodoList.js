@@ -9,7 +9,6 @@ class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <TodoForm/>
         <p>Todo List.....</p>
       </div>
     );
