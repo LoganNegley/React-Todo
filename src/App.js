@@ -23,24 +23,24 @@ const data = [
 
 class App extends React.Component {
 
-  // you will need a place to store your state in this component.
   constructor(){
     super();
     this.state = {
-      // data state
+      // State
       todoTasks:data
     }
       console.log(this.state.todoTasks)
-
   }
 
   // functions
   handleChange = event =>{
-    
+
   };
 
- toggleClick =() =>{
+     toggleClick = () => {
   }
+
+
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
@@ -49,7 +49,6 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <TodoForm />
         <TodoList todoData={this.state.todoTasks}/>
-
       </div>
     );
   }
