@@ -30,7 +30,7 @@ class App extends React.Component {
       todoTasks:data
     }
       console.log(this.state.todoTasks)
-  }
+  };
 
   // functions
   handleChange = event =>{
@@ -38,14 +38,21 @@ class App extends React.Component {
   };
 
      toggleClick = (clickedId) => {
-       const newtem = this.state.todoTasks.map((item)=>{
+       const newTodo = this.state.todoTasks.map((item)=>{
          if(item.id=== clickedId){
-          return {}
+          return {
+            ...item,
+            purchased: !item.purchased
+          }
          }else{
            return item;
          }
-       })
-  }
+       });
+
+       this.setState({
+         todoTasks: newTodo
+       });
+  };
 
 
   // design `App` to be the parent component of your application.
@@ -55,7 +62,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm />
-        <TodoList todoData={this.state.todoTasks}/>
+        <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
       </div>
     );
   }
