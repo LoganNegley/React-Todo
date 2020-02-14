@@ -92,7 +92,7 @@ addNewTask = (itemText) =>{
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
-      <div>
+      <div className='app-container'>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange} handleSubmit={this.handleSubmit} clear={this.submitClear}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
