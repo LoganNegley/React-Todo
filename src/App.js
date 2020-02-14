@@ -1,8 +1,20 @@
 import React from 'react';
-
+import styled from 'styled-components'
 import TodoList from '../src/components/TodoComponents/TodoList.js';
 import TodoForm from '../src/components/TodoComponents/TodoForm';
 
+
+// Styles
+const AppContainer = styled.div`
+width:35%;
+background-color:lightgray;
+margin:0 auto;
+`;
+
+const TodoWrapper = styled.div`
+text-align:center;
+
+`;
 const data = [
     {
       task:'Cook', 
@@ -92,11 +104,13 @@ addNewTask = (itemText) =>{
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
-      <div className='app-container'>
+      <AppContainer className='app-container'>
+        <TodoWrapper>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange} handleSubmit={this.handleSubmit} clear={this.submitClear}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
-      </div>
+        </TodoWrapper>
+      </AppContainer>
     );
   }
 }
