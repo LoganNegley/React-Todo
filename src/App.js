@@ -33,22 +33,26 @@ class App extends React.Component {
       console.log(this.state.todoTasks)
   };
 
-  // functions
+  // Functions
+  // handle input
   handleChange = event =>{
 this.setState({
   text:event.target.value
 });
      console.log(event.target.value)
   };
- 
 //  Submit
-
 handleSubmit=(event) => {
 event.preventDefault();
 this.addNewTask(this.state.text)
 console.log('form Submitted')
 };
 
+// To clear task
+submitClear = (event) => {
+event.preventDefault();
+}
+// Create new task
 addNewTask = (itemText) =>{
   const newTask={
     task: itemText,
@@ -60,10 +64,11 @@ addNewTask = (itemText) =>{
   });
 };
 
-
+// Toggle on click
      toggleClick = (clickedId) => {
        const newTodo = this.state.todoTasks.map((item)=>{
          if(item.id=== clickedId){
+           console.log('clicked', item.completed)
           return {
             ...item,
             completed: !item.completed
@@ -76,7 +81,6 @@ addNewTask = (itemText) =>{
        this.setState({
          todoTasks: newTodo
        });
-       console.log('clicked')
   };
 
   // design `App` to be the parent component of your application.

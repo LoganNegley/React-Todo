@@ -8,9 +8,9 @@ import Todo from '../TodoComponents/Todo';
 const TodoList = props => {
 
     return (
-      <div>
+      <div className='todo-list'>
         {props.todoData.map( (item) =>
-        <Todo item= {item} toggleClick={props.toggleClick}/>
+        <Todo item= {item} key={item.id} toggleClick={props.toggleClick}/>
         )}
       </div>
     );
