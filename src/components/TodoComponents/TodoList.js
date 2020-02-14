@@ -5,17 +5,16 @@ import TodoForm from '../TodoComponents/TodoForm';
 import Todo from '../TodoComponents/Todo';
 
 
-class TodoList extends React.Component {
+const TodoList = props => {
 
-  render() {
     return (
       <div>
-        {this.props.todoData.map( (item) =>
-        <Todo item= {item} toggleClick={this.props.toggleClick}/>
+        {props.todoData.map( (item) =>
+        <Todo item= {item} toggleClick={props.toggleClick}/>
         )}
       </div>
     );
-  }
-}
+  };
+
 
 export default TodoList;
