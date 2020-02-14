@@ -13,8 +13,13 @@ margin:0 auto;
 
 const TodoWrapper = styled.div`
 text-align:center;
-
 `;
+
+const Heading = styled.h1`
+font-size:35px;
+`;
+
+// Data
 const data = [
     {
       task:'Cook', 
@@ -106,7 +111,7 @@ addNewTask = (itemText) =>{
     return (
       <AppContainer className='app-container'>
         <TodoWrapper>
-        <h2>Welcome to your Todo App!</h2>
+        <Heading>Welcome to your Todo App!</Heading>
         <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange} handleSubmit={this.handleSubmit} clear={this.submitClear}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
         </TodoWrapper>

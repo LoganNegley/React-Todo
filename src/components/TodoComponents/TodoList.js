@@ -3,16 +3,20 @@
 import React from 'react';
 import TodoForm from '../TodoComponents/TodoForm';
 import Todo from '../TodoComponents/Todo';
+import styled from 'styled-components';
 
+const TodoListContainer = styled.div`
+margin-top:10px;
+`;
 
 const TodoList = props => {
 
     return (
-      <div className='todo-list'>
+      <TodoListContainer className='todo-list'>
         {props.todoData.map( (item) =>
         <Todo item= {item} key={item.id} toggleClick={props.toggleClick}/>
         )}
-      </div>
+      </TodoListContainer>
     );
   };
 
