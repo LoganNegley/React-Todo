@@ -49,20 +49,20 @@ console.log('form Submitted')
 };
 
 // To clear task
-submitClear = (event) => {
-event.preventDefault();
+submitClear = (event) =>{
+  event.preventDefault();
 this.setState({
   todoTasks:this.state.todoTasks.filter(item =>{
     return item.completed===false;
   })
 })
-}
+};
 // Create new task
 addNewTask = (itemText) =>{
   const newTask={
     task: itemText,
     id: Date.now(),
-    completed:'false'
+    completed:false
   }
   this.setState({
     todoTasks: [...this.state.todoTasks, newTask]
