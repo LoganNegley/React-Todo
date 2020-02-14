@@ -37,7 +37,14 @@ class App extends React.Component {
 
   };
 
-     toggleClick = () => {
+     toggleClick = (clickedId) => {
+       const newtem = this.state.todoTasks.map((item)=>{
+         if(item.id=== clickedId){
+          return {}
+         }else{
+           return item;
+         }
+       })
   }
 
 
