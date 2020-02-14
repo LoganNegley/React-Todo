@@ -42,7 +42,7 @@ class App extends React.Component {
          if(item.id=== clickedId){
           return {
             ...item,
-            purchased: !item.purchased
+            completed: !item.completed
           }
          }else{
            return item;
@@ -52,6 +52,7 @@ class App extends React.Component {
        this.setState({
          todoTasks: newTodo
        });
+       console.log('clicked')
   };
 
 
