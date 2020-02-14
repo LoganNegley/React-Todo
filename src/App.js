@@ -27,7 +27,8 @@ class App extends React.Component {
     super();
     this.state = {
       // State
-      todoTasks:data
+      todoTasks:data,
+      text:''
     }
       console.log(this.state.todoTasks)
   };
@@ -35,7 +36,7 @@ class App extends React.Component {
   // functions
   handleChange = event =>{
 this.setState({
-  [event.target.item]: event.target.value
+  text:event.target.value
 });
      console.log(event.target.value)
   };
@@ -44,7 +45,8 @@ this.setState({
 
 handleSubmit=(event) => {
 event.preventDefault();
-this.addNewTask(this.state.newTask)
+this.addNewTask(this.state.text)
+console.log('form Submitted')
 };
 
 addNewTask = (itemText) =>{
@@ -54,7 +56,7 @@ addNewTask = (itemText) =>{
     completed:'false'
   }
   this.setState({
-    todoTasks: [... this.state.todoTasks, newTask]
+    todoTasks: [...this.state.todoTasks, newTask]
   });
 };
 
