@@ -40,6 +40,24 @@ this.setState({
      console.log(event.target.value)
   };
  
+//  Submit
+
+handleSubmit=(event) => {
+event.preventDefault();
+this.addNewTask(this.state.newTask)
+};
+
+addNewTask = (itemText) =>{
+  const newTask={
+    task: itemText,
+    id: Date.now(),
+    completed:'false'
+  }
+  this.setState({
+    todoTasks: [... this.state.todoTasks, newTask]
+  });
+};
+
 
      toggleClick = (clickedId) => {
        const newTodo = this.state.todoTasks.map((item)=>{
@@ -65,7 +83,7 @@ this.setState({
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange}/>
+        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange} handleSubmit={this.handleSubmit}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
       </div>
     );
