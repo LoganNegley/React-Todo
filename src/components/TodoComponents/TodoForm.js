@@ -1,10 +1,7 @@
 import React from 'react';
 
 
-class TodoForm extends React.Component {
-
-  render() {
-    return (
+const TodoForm = props => {    return (
       <form>
         <input type='text' name='item'/>
         <button>Add</button>
@@ -12,6 +9,5 @@ class TodoForm extends React.Component {
       </form>
     );
   }
-}
 
 export default TodoForm;

@@ -55,14 +55,13 @@ class App extends React.Component {
        console.log('clicked')
   };
 
-
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
+        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChanges}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
       </div>
     );
