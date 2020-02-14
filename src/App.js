@@ -37,7 +37,9 @@ class App extends React.Component {
 this.setState({
   [event.target.item]: event.target.value
 });
+     console.log(event.target.value)
   };
+ 
 
      toggleClick = (clickedId) => {
        const newTodo = this.state.todoTasks.map((item)=>{
@@ -63,7 +65,7 @@ this.setState({
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChanges}/>
+        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
       </div>
     );
