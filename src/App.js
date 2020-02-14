@@ -34,7 +34,9 @@ class App extends React.Component {
 
   // functions
   handleChange = event =>{
-
+this.setState({
+  [event.target.item]: event.target.value
+});
   };
 
      toggleClick = (clickedId) => {
