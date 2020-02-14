@@ -51,6 +51,11 @@ console.log('form Submitted')
 // To clear task
 submitClear = (event) => {
 event.preventDefault();
+this.setState({
+  todoTasks:this.state.todoTasks.filter(item =>{
+    return item.completed===false;
+  })
+})
 }
 // Create new task
 addNewTask = (itemText) =>{
@@ -89,7 +94,7 @@ addNewTask = (itemText) =>{
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <TodoForm todoTasks={this.state.todoTasks} handleChanges={this.handleChange} handleSubmit={this.handleSubmit} clear={this.submitClear}/>
         <TodoList todoData={this.state.todoTasks} toggleClick={this.toggleClick}/>
       </div>
     );
